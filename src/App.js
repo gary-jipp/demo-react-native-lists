@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useCallback} from 'react';
 import {SafeAreaView, FlatList, StatusBar, StyleSheet, Text, View} from 'react-native';
 import friendData from './data';
 
@@ -9,16 +9,15 @@ const App = () => {
     setFriends(friendData);
   }, []);
 
-
-  // Type = ListRenderItem
-  const renderItem = ({item}) => {
+  // Type = ListRenderItem (not a compoment function)
+  const renderItem = useCallback(({item}) => {
     console.log('Rendering Item', item.id);
     return (
       <View style={styles.listItem}>
         <Text style={styles.itemText}>{item.name}</Text>
       </View>
     );
-  };
+  }, []);
 
   // Component used as list separator
   const ItemSeparator = () => {

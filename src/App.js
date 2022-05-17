@@ -26,6 +26,7 @@ const App = () => {
       <FlatList
         data={friends}
         renderItem={renderItem}
+        keyExtractor={item => item.id.toString()}
       />
 
     </SafeAreaView>

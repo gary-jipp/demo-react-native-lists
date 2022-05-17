@@ -2,8 +2,7 @@
 
 ## flatlist
 
-- remove `ScrollList` and mapped `list`
-- instead, we will create a `renderItem` component
-- note: TS type is `ListRenderItem`
-- content same as map, but no `key` needed
-- add FlatList:  want `data` and `renderItem`
+- If our data has a `key`, we're good
+- but usually it has `id` or something
+- need to add a `keyExtactor`
+- probably should use `toString` in TS

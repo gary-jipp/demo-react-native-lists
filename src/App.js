@@ -12,6 +12,7 @@ const App = () => {
 
   // Type = ListRenderItem
   const renderItem = ({item}) => {
+    console.log('Rendering Item', item.id);
     return (
       <View style={styles.listItem}>
         <Text style={styles.itemText}>{item.name}</Text>
@@ -52,6 +53,8 @@ const App = () => {
         ListEmptyComponent={EmptyListComponent}
         ListFooterComponent={ListFooterComponent}
         ListHeaderComponent={ListHeaderComponent}
+        initialNumToRender={20}
+        windowSize={2}
       />
 
     </SafeAreaView>

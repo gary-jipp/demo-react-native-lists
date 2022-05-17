@@ -1,12 +1,29 @@
-import React from 'react';
-import {SafeAreaView, StatusBar, StyleSheet, Text} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, View} from 'react-native';
+import friendData from './data';
 
 const App = () => {
+  const [friends, setFriends] = useState([]);
+
+  useEffect(() => {
+    setFriends(friendData);
+  }, []);
+
+  const list = friends.map(friend => {
+    return (
+      <View key={friend.id}>
+        <Text>{friend.name}</Text>
+      </View>
+    );
+  });
 
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar />
       <Text style={styles.text}>Hello React</Text>
+      <ScrollView>
+        {list}
+      </ScrollView>
     </SafeAreaView>
   );
 };

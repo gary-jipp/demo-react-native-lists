@@ -9,22 +9,22 @@ const App = () => {
     setFriends(friendData);
   }, []);
 
-  const list = friends.map(friend => {
+
+  // Type = ListRenderItem
+  const renderItem = ({item}) => {
+
     return (
-      <View key={friend.id} style={styles.listItem}>
-        <Text style={styles.itemText}>{friend.name}</Text>
-        <View style={styles.separator}></View>
-      </View>
+      <View style={styles.listItem} >
+        <Text style={styles.itemText}>{item.name}</Text>
+      </View >
     );
-  });
+  };
 
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar />
       <Text style={styles.text}>Hello React</Text>
-      <ScrollView>
-        {list}
-      </ScrollView>
+
     </SafeAreaView>
   );
 };

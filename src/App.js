@@ -6,7 +6,7 @@ const App = () => {
   const [friends, setFriends] = useState([]);
 
   useEffect(() => {
-    // setFriends(friendData);
+    setFriends(friendData);
   }, []);
 
 

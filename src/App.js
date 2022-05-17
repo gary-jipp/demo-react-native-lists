@@ -11,8 +11,9 @@ const App = () => {
 
   const list = friends.map(friend => {
     return (
-      <View key={friend.id}>
-        <Text>{friend.name}</Text>
+      <View key={friend.id} style={styles.listItem}>
+        <Text style={styles.text}>{friend.name}</Text>
+        <View style={styles.separator}></View>
       </View>
     );
   });
@@ -20,7 +21,6 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar />
-      <Text style={styles.text}>Hello React</Text>
       <ScrollView>
         {list}
       </ScrollView>
@@ -31,10 +31,17 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'stretch',
   },
-  text: {fontSize: 24, fontWeight: '500'},
+  listItem: {
+    padding: 18,
+    backgroundColor: '#888'
+  },
+  separator: {
+    height: 2,
+    backgroundColor: '#EEE',
+  },
+  text: {fontSize: 24, fontWeight: '500', color: '#EEE'},
 });
 
 export default App;

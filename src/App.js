@@ -6,7 +6,7 @@ const App = () => {
   const [friends, setFriends] = useState([]);
 
   useEffect(() => {
-    setFriends(friendData);
+    // setFriends(friendData);
   }, []);
 
 
@@ -24,6 +24,21 @@ const App = () => {
     return <View style={styles.separator} />;
   };
 
+  const EmptyListComponent = () => {
+    return (
+      <View style={styles.listItem}>
+        <Text style={styles.itemText}>No data found</Text>
+      </View>
+    );
+  };
+
+  const ListHeaderComponent = () => {
+    return <Text style={styles.header}>List of Friends</Text>;
+  };
+
+  const ListFooterComponent = () => {
+    return <Text style={styles.footer}>That's all Folks</Text>;
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -34,6 +49,9 @@ const App = () => {
         renderItem={renderItem}
         keyExtractor={item => item.id.toString()}
         ItemSeparatorComponent={ItemSeparator}
+        ListEmptyComponent={EmptyListComponent}
+        ListFooterComponent={ListFooterComponent}
+        ListHeaderComponent={ListHeaderComponent}
       />
 
     </SafeAreaView>
@@ -55,6 +73,18 @@ const styles = StyleSheet.create({
   },
   text: {fontSize: 24, fontWeight: '600', color: '#555'},
   itemText: {fontSize: 24, fontWeight: '500', color: '#EEE'},
+  header: {
+    fontSize: 30,
+    textAlign: 'center',
+    marginTop: 20,
+    fontWeight: 'bold',
+  },
+  footer: {
+    fontSize: 30,
+    textAlign: 'center',
+    marginBottom: 20,
+    fontWeight: 'bold',
+  },
 });
 
 export default App;

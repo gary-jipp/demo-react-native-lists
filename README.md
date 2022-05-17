@@ -2,5 +2,7 @@
 
 ## flatlist
 
-- add a  `ItemSeparatorComponent`
-- add style for separator
+- ListEmptyComponent={EmptyList}
+- ItemSeparatorComponent={ItemSeparator}
+- ListFooterComponent={ListFooterComponent}
+- ListHeaderComponent={ListHeaderComponent}nent`

@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'stretch',
   },
+  text: {fontSize: 24, fontWeight: '600', color: '#555'},
   listItem: {
     padding: 18,
     backgroundColor: '#888'
@@ -71,7 +72,6 @@ const styles = StyleSheet.create({
     height: 2,
     backgroundColor: '#EEE',
   },
-  text: {fontSize: 24, fontWeight: '600', color: '#555'},
   itemText: {fontSize: 24, fontWeight: '500', color: '#EEE'},
   header: {
     fontSize: 30,

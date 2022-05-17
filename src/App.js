@@ -19,6 +19,12 @@ const App = () => {
     );
   };
 
+  // Component used as list separator
+  const ItemSeparator = () => {
+    return <View style={styles.separator} />;
+  };
+
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar />
@@ -27,6 +33,7 @@ const App = () => {
         data={friends}
         renderItem={renderItem}
         keyExtractor={item => item.id.toString()}
+        ItemSeparatorComponent={ItemSeparator}
       />
 
     </SafeAreaView>

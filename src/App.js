@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, View} from 'react-native';
+import {SafeAreaView, FlatList, StatusBar, StyleSheet, Text, View} from 'react-native';
 import friendData from './data';
 
 const App = () => {
@@ -12,11 +12,10 @@ const App = () => {
 
   // Type = ListRenderItem
   const renderItem = ({item}) => {
-
     return (
-      <View style={styles.listItem} >
+      <View style={styles.listItem}>
         <Text style={styles.itemText}>{item.name}</Text>
-      </View >
+      </View>
     );
   };
 
@@ -24,6 +23,10 @@ const App = () => {
     <SafeAreaView style={styles.container}>
       <StatusBar />
       <Text style={styles.text}>Hello React</Text>
+      <FlatList
+        data={friends}
+        renderItem={renderItem}
+      />
 
     </SafeAreaView>
   );
